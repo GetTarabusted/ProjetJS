@@ -6,18 +6,7 @@ const jpeg = require('jpeg-js');
 const Bromise = require('bluebird');
 const R = require('ramda');
 
-const {concatWithPath} = require('./app/file-system-functions');
-
-const getPictureList = (dir) => {
-    const files = fs.readdirSync(dir);
-    return files.filter(function (file) {
-        return /jpg/.test(file)
-    });
-};
-
-const transformStringToPath = (string) => './'+string;
-
-const getPngPaths = (dir) => R.map(transformStringToPath, getPictureList(dir));
+const {concatWithImagePath} = require('./app/file-system-functions');
 
 const readJpg = async (path) => jpeg.decode(await fs.readFile(path), true);
 
@@ -28,7 +17,7 @@ const addPathToPrediction = (pathList, predictionList) =>
 
 (async () => {
     const imgList = await Bromise.map(
-        getPngPaths('./'),
+        concatWithImagePath('./images'),
         readJpg
     );
 

@@ -7,16 +7,16 @@ const getPictureListMaisBien = R.pipe(
     R.andThen(R.filter(R.test(/\.jpg$/)))
 );
 
-const concatWithPath = x => R.pipe(
+const concatWithImagePath = x => R.pipe(
     getPictureListMaisBien,
     R.andThen(R.map(R.concat(`${x}/`)))
 )(x);
 
 const tester = async () => {
-    console.log(await concatWithPath('./images'));
+    console.log(await concatWithImagePath('./images'));
 };
 
 tester();
 
 
-module.exports = {concatWithPath};
+module.exports = {concatWithImagePath};
