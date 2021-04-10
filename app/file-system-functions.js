@@ -16,7 +16,4 @@ const tester = async () => {
     console.log(await concatWithImagePath('./images'));
 };
 
-tester();
-
-
 module.exports = {concatWithImagePath};

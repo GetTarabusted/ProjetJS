@@ -46,46 +46,5 @@ const renameAndMove = (picture, numberOfFiles, animal) => {
     console.log("The picture "+ picture + " was renamed and successfully moved.");
 };
 
-// (async () => {
-//     const imgList = await Bromise.map(
-//         PngPaths,
-//         readJpg
-//     );
-//
-//     // Load the model.
-//     const model = await cocoSsd.load();
-//
-//     // Classify the image.
-//     const predictions = await Bromise.map(imgList, (x) => model.detect(x));
-//
-//     console.log('Predictions: ');
-//     console.log(R.flatten(predictions));
-//
-//     // A MODIFIER
-//     const classlist = R.map(getClassFromPrediction, predictions);
-//     console.log(classlist);
-//     R.map(createAnimalDir, classlist);
-//     R.map(renameAndMove(), PngPaths);
-//
-//     /* let index = 0;
-//     for (const elem of predictions){
-//         // on récupère l'attribut class qui définit l'animal
-//         const animal = elem[0].class;
-//
-//         // on crée le dossier si ce n'est pas déjà fait
-//         await fs.ensureDir('./' + animal);
-//
-//         // on compte le nombre files pour le nom de l'image
-//         const numberOfFiles = fs.readdirSync('./'+animal).length;
-//
-//         // on rename l'image
-//         const newpath = './' + animal + '/' + animal + (numberOfFiles) + '.jpg';
-//         await fs.rename(PngPaths[index], newpath);
-//         console.log("The picture "+ PngPaths[index] + " was renamed and successfully moved to " + newpath)
-//         index +=1;
-//     } */
-//
-//
-// })();
 
 
