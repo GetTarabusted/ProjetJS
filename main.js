@@ -16,11 +16,16 @@ const predictions = mock_prediction();
 const paths = concatWithImagePath('./images')
 
 console.log('Predictions: ');
-console.log(R.flatten(predictions));
+console.log(predictions);
+const addPathToPrediction = (picturepath, prediction) => prediction.path = picturepath;
 
-const addPathToPrediction = (path, prediction) => prediction.path = path;
-
-R.map(predictions, )
+const tester = async () => {
+    const paths = await concatWithImagePath('./images');
+    R.map(addPathToPrediction(paths), predictions)
+    console.log(predictions);
+};
+tester();
+// R.map(addPathToPrediction(paths), predictions);
 
 
 /* On commente tout ça parce qu'on a le mock pour gagner du temps d'execution pour le moment qui renvoie la même chose
