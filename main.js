@@ -13,17 +13,16 @@ const {mock_prediction} = require('./app/prediction')
 const {concatWithImagePath} = require('./app/file-system-functions');
 
 const predictions = mock_prediction();
-const paths = concatWithImagePath('./images')
 
-console.log('Predictions: ');
-console.log(predictions);
-const addPathToPrediction = (picturepath, prediction) => prediction.path = picturepath;
+const addPath = (obj, path) => obj.path = path
+
 
 const tester = async () => {
     const paths = await concatWithImagePath('./images');
-    R.map(addPathToPrediction(paths), predictions)
+    R.zipWith(addPath, predictions, paths)
     console.log(predictions);
 };
+
 tester();
 // R.map(addPathToPrediction(paths), predictions);
 
