@@ -14,17 +14,22 @@ const {concatWithImagePath} = require('./app/file-system-functions');
 
 const predictions = mock_prediction();
 
-const addPath = (obj, path) => obj.path = path
+const addPathToObject = (obj, path) => obj.path = path
 
-
-const tester = async () => {
-    const paths = await concatWithImagePath('./images');
-    R.zipWith(addPath, predictions, paths)
-    console.log(predictions);
+const ZipPathsToPredictions = (obj) => {
+    R.zipWith(addPathToObject, obj, concatWithImagePath('./images'));
+    return obj;
 };
 
-tester();
-// R.map(addPathToPrediction(paths), predictions);
+const createAnimalDirectory = (obj) => fs.ensureDirSync('./images/' + obj.class);
+
+const tester = (predictions) => {
+    ZipPathsToPredictions(predictions);
+    R.map(createAnimalDirectory, predictions)
+
+};
+
+tester(predictions);
 
 
 /* On commente tout ça parce qu'on a le mock pour gagner du temps d'execution pour le moment qui renvoie la même chose

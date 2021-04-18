@@ -3,17 +3,22 @@ const fs = require('fs-extra');
 const Bromise = require('bluebird');
 
 const getPictureListMaisBien = R.pipe(
-    fs.readdir,
-    R.andThen(R.filter(R.test(/\.jpg$/)))
+    fs.readdirSync,
+    R.filter(R.test(/\.jpg$/))
 );
 
-const concatWithImagePath = x => R.pipe(
+const concatWithImagePath = path => R.pipe(
     getPictureListMaisBien,
-    R.andThen(R.map(R.concat(`${x}/`)))
-)(x);
+    R.map(R.concat(`${path}/`))
+)(path);
+
+
 
 const tester = async () => {
     console.log(await concatWithImagePath('./images'));
 };
+
+
+
 
 module.exports = {concatWithImagePath};
