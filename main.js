@@ -9,27 +9,43 @@ const jpeg = require('jpeg-js');
 const Bromise = require('bluebird');
 const R = require('ramda');
 
-const {mock_prediction} = require('./app/prediction')
-const {concatWithImagePath} = require('./app/file-system-functions');
 
-const predictions = mock_prediction();
 
-const addPathToObject = (obj, path) => obj.path = path
+const {concatWithImagePath, loadImages} = require('./app/file-system-functions');
+const {predictImages} = require('./app/IA/predict');
 
-const ZipPathsToPredictions = (obj) => {
-    R.zipWith(addPathToObject, obj, concatWithImagePath('./images'));
+
+const addPathToObject = path => R.assoc('path', path);
+
+const zipPathsToPredictions = (obj) => {
+
+
+    const x = R.zipWith(addPathToObject, obj, concatWithImagePath('./images'));
+    console.log(x);
+    console.log(obj);
+
     return obj;
 };
 
-const createAnimalDirectory = (obj) => fs.ensureDirSync('./images/' + obj.class);
+const createAnimalDirectory = rootPath => R.pipe(
+    R.prop('class'),
+    R.concat(rootPath),
+    fs.ensureDir
+);
 
-const tester = (predictions) => {
-    ZipPathsToPredictions(predictions);
-    R.map(createAnimalDirectory, predictions)
+const tester = R.pipeWith(R.andThen, [
+    loadImages,
+    predictImages,
+    // moveImages,
+    // saveToDb
+    R.tap(R.map(console.log))
+]);
 
-};
 
-tester(predictions);
+//    zipPathsToPredictions(predictions);
+//    R.map(createAnimalDirectory('./images/'), predictions);
+
+tester('./images/');
 
 
 /* On commente tout ça parce qu'on a le mock pour gagner du temps d'execution pour le moment qui renvoie la même chose

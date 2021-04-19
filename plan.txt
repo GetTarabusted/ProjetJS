@@ -1,0 +1,19 @@
+
+Recuperer liste des paths ([img] -> [path])
+
+Ajouter path à pour chaque prediction elem.path = path
+
+Objet prediction {[{bbox, class, score + PATH}]}
+
+Recuperer liste des classes (prediction) -> list[class]
+	- recup depuis prediction
+
+Creer les dossiers (path) -> void
+	- 
+
+Deplacer les fichier + rename (fichier + newpath) -> void
+	- compter le nombre de files (dir) -> int
+	- deplacer le fichier (dir + newpath) -> void
+
+
+Idealement : objet -> objet.path -> deplacement du path en fonction de la classe
