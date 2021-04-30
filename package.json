@@ -33,5 +33,10 @@
     "bracketSpacing": false,
     "singleQuote": true,
     "trailingComma": "none"
-  }
+  },
+  "scripts": {
+  "code-style": "xo",
+  "code-style-fix": "xo --fix"
+},
+
 }
