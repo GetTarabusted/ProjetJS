@@ -1,7 +1,7 @@
 const R = require('ramda');
 const Bromise = require('bluebird');
 
-const {bMap} = require('../functional-utils')
+const {bMap} = require('../functional-utils');
 
 const {detect} = require('./detect');
 // Const {detect} = require('./mock-detect');
@@ -9,8 +9,8 @@ const {detect} = require('./detect');
 const detectImage = R.pipe(R.prop('image'), detect);
 
 const predictImage = R.pipe(
-    R.converge(R.assoc('prediction'), [detectImage, R.identity]),
-    Bromise.props,
+  R.converge(R.assoc('prediction'), [detectImage, R.identity]),
+  Bromise.props
 );
 
 const predictImages = bMap(predictImage);
