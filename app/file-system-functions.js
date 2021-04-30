@@ -25,39 +25,38 @@ const tester = async () => {
 
 const readJpgFromPath_ = R.pipe(R.prop('path'), readJpg);
 
-// str -> str -> Promise(Object)
-// rootPath -> imageName -> Promise({path, image})
-const readImage_ = rootPath => R.pipe(
+// Str -> str -> Promise(Object)
+// RootPath -> imageName -> Promise({path, image})
+const readImage_ = (rootPath) => R.pipe(
     R.concat(rootPath),
     R.objOf('path'),
     R.converge(R.assoc('image'), [readJpgFromPath_, R.identity]),
     Bromise.props
-);
+    );
 
-// str -> Promise(List)
-// rootPath -> Promise([{path, image}])
-const loadImages = rootPath => R.pipe(
+// Str -> Promise(List)
+// RootPath -> Promise([{path, image}])
+const loadImages = (rootPath) => R.pipe(
     fs.readdir,
     R.andThen(bMap(readImage_(rootPath)))
 )(rootPath);
 
-// rootpath -> dir creation
-const createAnimalDirectory = rootPath => R.pipe(
+// Rootpath -> dir creation
+const createAnimalDirectory = (rootPath) => R.pipe(
     R.map(
         R.pipe(
             R.path(['prediction', '0', 'class']),
             R.concat(rootPath),
             fs.ensureDir
+            )
         )
-    )
-);
+    );
 
-const setBboxInPercent = (obj) => {
-    let image = readJpg(obj.path);
-    let lst = [image.width, image.height];
-    obj.bbox = R.zipWith(R.divide, obj.bbox, R.concat(lst, lst));
-    return obj;
+const setBboxInPercent = (object) => {
+    const image = readJpg(object.path);
+    const lst = [image.width, image.height];
+    object.bbox = R.zipWith(R.divide, object.bbox, R.concat(lst, lst));
+    return object;
 };
-
 
 module.exports = {setBboxInPercent, readJpg, loadImages, createAnimalDirectory};

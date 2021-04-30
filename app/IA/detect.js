@@ -1,4 +1,4 @@
-require('@tensorflow/tfjs-node-gpu');
+const tensorflow = require('@tensorflow/tfjs-node-gpu');
 const cocoSsd = require('@tensorflow-models/coco-ssd');
 
 let model_ = null;
