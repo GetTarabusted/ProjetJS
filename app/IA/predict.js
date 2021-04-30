@@ -3,8 +3,8 @@ const Bromise = require('bluebird');
 
 const {bMap} = require('../functional-utils')
 
-//const {detect} = require('./detect');
-const {detect} = require('./mock-detect');
+const {detect} = require('./detect');
+//const {detect} = require('./mock-detect');
 
 const detectImage = R.pipe(R.prop('image'), detect)
 

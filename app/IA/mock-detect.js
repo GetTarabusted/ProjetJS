@@ -1,4 +1,5 @@
-const detect = () => Promise.resolve([{
+const detect = () => Promise.resolve([
+    {
         bbox: [
             108.02181085944176,
             16.282024383544922,

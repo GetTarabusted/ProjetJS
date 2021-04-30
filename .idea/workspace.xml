@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9671a7ed-7093-4aca-931f-76fed891217b" name="Default Changelist" comment="Update 13/04">
+    <list default="true" id="9671a7ed-7093-4aca-931f-76fed891217b" name="Default Changelist" comment="Update 13/04 : add path to obj done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/IA/mock-detect.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/IA/mock-detect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/IA/predict.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/IA/predict.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/file-system-functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/file-system-functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/functional-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/functional-utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +39,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -46,12 +51,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/node.js" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mesquin\Documents\MEGAsync\Etudes\S8\Js\Projet\app\IA" />
       <recent name="C:\Users\Mesquin\Documents\MEGAsync\Etudes\S8\Js\Projet\app" />
     </key>
   </component>
@@ -72,7 +78,15 @@
       <workItem from="1617970452534" duration="16942000" />
       <workItem from="1618229036778" duration="780000" />
       <workItem from="1618297954258" duration="2842000" />
-      <workItem from="1618304395314" duration="4611000" />
+      <workItem from="1618304395314" duration="4728000" />
+      <workItem from="1618472323862" duration="1802000" />
+      <workItem from="1618498687392" duration="2319000" />
+      <workItem from="1618737989944" duration="11407000" />
+      <workItem from="1618761731978" duration="4419000" />
+      <workItem from="1618839767335" duration="2719000" />
+      <workItem from="1619727122508" duration="5336000" />
+      <workItem from="1619784106129" duration="7087000" />
+      <workItem from="1619791789802" duration="4094000" />
     </task>
     <task id="LOCAL-00001" summary="Update fin du cours">
       <created>1617983941629</created>
@@ -95,7 +109,35 @@
       <option name="project" value="LOCAL" />
       <updated>1618302415321</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update 13/04">
+      <created>1618309649212</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618309649212</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update 18/04">
+      <created>1618757727051</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618757727051</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update rdv prof 18/04">
+      <created>1618839809626</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618839809626</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update rdv prof 18/04">
+      <created>1618839839880</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1618839839880</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,19 +171,9 @@
     <MESSAGE value="Update fin du cours" />
     <MESSAGE value="Update 10/04" />
     <MESSAGE value="Update 13/04" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update 13/04" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/prediction.js</url>
-          <line>6</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Update 18/04" />
+    <MESSAGE value="Update rdv prof 18/04" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update rdv prof 18/04" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

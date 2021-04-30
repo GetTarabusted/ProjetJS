@@ -41,4 +41,23 @@ const loadImages = rootPath => R.pipe(
     R.andThen(bMap(readImage_(rootPath)))
 )(rootPath);
 
-module.exports = {concatWithImagePath, readJpg, loadImages};
+// rootpath -> dir creation
+const createAnimalDirectory = rootPath => R.pipe(
+    R.map(
+        R.pipe(
+            R.path(['prediction', '0', 'class']),
+            R.concat(rootPath),
+            fs.ensureDir
+        )
+    )
+);
+
+const setBboxInPercent = (obj) => {
+    let image = readJpg(obj.path);
+    let lst = [image.width, image.height];
+    obj.bbox = R.zipWith(R.divide, obj.bbox, R.concat(lst, lst));
+    return obj;
+};
+
+
+module.exports = {setBboxInPercent, readJpg, loadImages, createAnimalDirectory};
